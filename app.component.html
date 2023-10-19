@@ -1,0 +1,68 @@
+<app-header></app-header>
+<ul *ngFor="let key of arr">
+  <li>{{key.name}}</li>
+
+  <ul *ngFor="let s of key.socialA">
+    <li>{{s.first}}</li>
+    <ul *ngFor="let z of s.fifth">
+      <li>{{z}}</li>
+    </ul>
+    <router-outlet></router-outlet>
+  </ul>
+  <li>{{key.lname}}</li>
+  <ul *ngFor="let s of key.socialA">
+    <li>{{s.first}}</li>
+    <ul *ngFor="let z of s.fifth">
+      <li>{{z}}</li>
+    </ul>
+  </ul>
+</ul>
+
+<h1 style="color: red;" [style.color]="color" [style.background]="bcolor"> It's for style</h1>
+<button (click)="myfun()">click</button>
+<app-header></app-header>
+<form action="" #basicForm="ngForm" (submit)="fundata(basicForm.value)">
+  <input ngModel type="text"> <br> <br>
+  <input ngModel type="text">
+  <button>submit</button>
+</form> <br><br><br><br><br><br>
+<button (click)="onlyfun()" >click</button>
+<h1 *ngIf="display">it is visible</h1>
+
+<p>
+	<ngb-alert [dismissible]="false">
+		<strong>Warning!</strong> Better check yourself, you're not looking too good.
+	</ngb-alert>
+</p> 
+ 
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
+
+
+<mat-card>
+  <mat-card-content>Simple card</mat-card-content>
+</mat-card>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list>
+
+<br> <br>
+<br>
+<input type="text" placeholder="enter any task" #demo>
+<button (click)="check(demo.value)">click</button>
+<ol>
+  <li *ngFor="let key of list">{{key.items}}  </li>
+</ol>
+<br><br> <br><br><br><br><br><br><br><br>
+<hr>
+
+<form [formGroup]="formdata" (ngSubmit)="sign()">
+  <input type="text" placeholder="enter your name" formControlName="user">
+  <input type="text" placeholder="enter your surname" formControlName="suser">
+  <button>click</button>
+</form>
+
